@@ -1,0 +1,12 @@
+{
+  "domain": "iopool",
+  "name": "iopool Integration",
+  "version": "1.0.0",
+  "documentation": "https://github.com/Trustmania/homeassistant-iopool",
+  "dependencies": [],
+  "codeowners": ["@Trustmania"],
+  "iot_class": "cloud_polling",
+  "config_flow": true,
+  "integration_type": "hub",
+  "requirements": ["requests", "pydantic"]
+}

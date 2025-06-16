@@ -1,0 +1,74 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect iopool",
+        "description": "Enter your API key and choose the options",
+        "data": {
+          "api_key": "API Key",
+          "poll_interval": "Polling interval (seconds)",
+          "temperature_unit": "Temperature unit"
+        }
+      }
+    },
+    "error": {
+      "invalid_api_key": "Invalid API key"
+    },
+    "abort": {
+      "already_configured": "This account is already connected"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "temperature": {
+        "name": "Water Temperature",
+        "unit_of_measurement": "°C"
+      },
+      "ph": {
+        "name": "pH Value",
+        "unit_of_measurement": "pH"
+      },
+      "orp": {
+        "name": "Redox (ORP)",
+        "unit_of_measurement": "mV"
+      },
+      "filtrationDuration": {
+        "name": "Filtration Duration",
+        "unit_of_measurement": "h"
+      },
+      "measuredAt": {
+        "name": "Measured At"
+      },
+      "mode": {
+        "name": "Pool Mode"
+      },
+      "measure_mode": {
+        "name": "Measurement Mode"
+      }
+    },
+    "binary_sensor": {
+      "hasAnActionRequired": {
+        "name": "Action Required"
+      },
+      "isValid": {
+        "name": "Measurement Valid"
+      }
+    }
+  },
+  "state": {
+    "iopool__mode": {
+      "STANDARD": "Standard",
+      "OPENING": "Opening",
+      "WINTER": "Winter",
+      "INITIALIZATION": "Initialization"
+    },
+    "iopool__measure_mode": {
+      "gateway": "Gateway",
+      "live": "Live",
+      "manual": "Manual",
+      "maintenance": "Maintenance",
+      "backup": "Backup",
+      "standard": "Standard"
+    }
+  }
+}
