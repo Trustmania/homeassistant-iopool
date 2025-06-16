@@ -65,12 +65,18 @@ class IopoolSensor(SensorEntity):
             else:
                 self._attr_options = ["gateway", "live", "manual", "maintenance", "backup", "standard"]
 
-        if sensor_type == "temperature":
-            self._attr_native_unit_of_measurement = "°F" if unit_pref == "F" else unit_override
-        elif sensor_type == "measuredAt":
+        if sensor_type == "measuredAt":
             self._attr_device_class = "timestamp"
+
+        native_unit = None
+        if sensor_type == "temperature":
+            native_unit = "°F" if unit_pref == "F" else unit_override
         else:
-            self._attr_native_unit_of_measurement = unit_override
+            native_unit = unit_override
+
+        if native_unit is not None:
+            self._attr_native_unit_of_measurement = native_unit
+
 
     @property
     def extra_state_attributes(self):
@@ -118,7 +124,7 @@ class IopoolSensor(SensorEntity):
             case "temperature":
                 return self._temperature(pool) if lm else None
             case "ph":
-                return round(lm.ph, 4) if lm else None
+                return round(lm.ph, 2) if lm else None
             case "orp":
                 return int(lm.orp) if lm else None
             case "filtrationDuration":

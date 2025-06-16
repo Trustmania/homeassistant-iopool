@@ -21,20 +21,16 @@
   "entity": {
     "sensor": {
       "temperature": {
-        "name": "Wassertemperatur",
-        "unit_of_measurement": "°C"
+        "name": "Wassertemperatur"
       },
       "ph": {
-        "name": "pH-Wert",
-        "unit_of_measurement": "pH"
+        "name": "pH-Wert"
       },
       "orp": {
-        "name": "Redox (ORP)",
-        "unit_of_measurement": "mV"
+        "name": "Redox (ORP)"
       },
       "filtrationDuration": {
-        "name": "Filterlaufzeit",
-        "unit_of_measurement": "h"
+        "name": "Filterlaufzeit"
       },
       "measuredAt": {
         "name": "Gemessen am"
